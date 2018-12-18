@@ -10,9 +10,9 @@ from scipy.stats import norm
 import matplotlib.pyplot as plt
 
 
-def categorical_summarized(dataframe, x=None, y=None, hue=None, palette='Set1'):
+def categorical_summarized(dataframe, x=None, y=None, hue=None, palette='Set1', ax=None, verbose=True):
     '''
-    Helper function that gives a quick summary of a given columns of categorical data
+    Helper function that gives a quick summary of a given column of categorical data
 
     Arguments
     =========
@@ -33,9 +33,11 @@ def categorical_summarized(dataframe, x=None, y=None, hue=None, palette='Set1'):
     series = dataframe[column_interested]
     print(series.describe())
     print('mode: ', series.mode())
-    print('='*80)
-    print(series.value_counts())
-    sns.countplot(x=x, y=y, hue=hue, data=dataframe, palette=palette)
+    if verbose:
+        print('='*80)
+        print(series.value_counts())
+
+    sns.countplot(x=x, y=y, hue=hue, data=dataframe, palette=palette, ax=ax)
     plt.show()
 
 
