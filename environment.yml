@@ -1,0 +1,12 @@
+name: EDA
+channels:
+  - defaults
+  - conda-forge
+dependencies:
+  - numpy
+  - pandas
+  - seaborn
+  - matplotlib
+  - python
+  - xgboost
+  - scikit-learn
