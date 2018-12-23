@@ -1,6 +1,5 @@
 # EDA
-This repo serves as code reference for the following TDS post *insert link*
-
+This repo serves as code reference for the following TDS [post](https://towardsdatascience.com/a-starter-pack-to-exploratory-data-analysis-with-python-pandas-seaborn-and-scikit-learn-a77889485baf) 
 ## Set up environment
 1. Clone this repo 
 
