@@ -10,7 +10,7 @@ from scipy.stats import norm
 import matplotlib.pyplot as plt
 
 
-def categorical_summarized(dataframe, x=None, y=None, hue=None, palette='Set1', ax=None, verbose=True):
+def categorical_summarized(dataframe, x=None, y=None, hue=None, palette='Set1', ax=None, order=None, verbose=True):
     '''
     Helper function that gives a quick summary of a given column of categorical data
 
@@ -37,11 +37,12 @@ def categorical_summarized(dataframe, x=None, y=None, hue=None, palette='Set1', 
         print('='*80)
         print(series.value_counts())
 
-    sns.countplot(x=x, y=y, hue=hue, data=dataframe, palette=palette, ax=ax)
+    sns.countplot(x=x, y=y, hue=hue, data=dataframe,
+                  palette=palette, order=order, ax=ax)
     plt.show()
 
 
-def quantitative_summarized(dataframe, x=None, y=None, hue=None, palette='Set1', ax=None, verbose=True, swarm=False):
+def quantitative_summarized(dataframe, x=None, y=None, hue=None, palette='Set1', ax=None, order=None, verbose=True, swarm=False):
     '''
     Helper function that gives a quick summary of quantattive data
 
@@ -65,15 +66,14 @@ def quantitative_summarized(dataframe, x=None, y=None, hue=None, palette='Set1',
         print('='*80)
         print(series.value_counts())
 
-    sns.boxplot(x=x, y=y, hue=hue, data=dataframe, palette=palette, ax=ax)
+    sns.boxplot(x=x, y=y, hue=hue, data=dataframe,
+                palette=palette, order=order, ax=ax)
 
     if swarm:
         sns.swarmplot(x=x, y=y, hue=hue, data=dataframe,
-                      palette=palette, ax=ax)
+                      palette=palette, order=order, ax=ax)
 
     plt.show()
-
-
 
 
 if __name__ == "__main__":
